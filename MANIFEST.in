@@ -1,0 +1,12 @@
+include LICENSE
+include CHANGELOG.md
+include CONTRIBUTING.md
+include README.md
+include README.en.md
+include README.zh-TW.md
+include setup.cfg
+recursive-include tests *.py
+recursive-include examples *
+recursive-include docs *
+recursive-include .github *.yml
+global-exclude __pycache__ *.py[cod]
