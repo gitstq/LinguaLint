@@ -88,7 +88,24 @@ def _excluded(name: str, patterns: List[str]) -> bool:
                for p in patterns)
 
 
+def _force_utf8_stdio() -> None:
+    """Make stdout/stderr UTF-8 safe (Windows defaults to a locale charmap).
+
+    Emoji and CJK characters must not crash when output is redirected.
+    Streams without ``reconfigure`` (e.g. in-memory test streams) are skipped.
+    """
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is None:
+            continue
+        try:
+            reconfigure(encoding="utf-8", errors="replace")
+        except (ValueError, OSError):
+            pass
+
+
 def run(argv: Optional[List[str]] = None) -> int:
+    _force_utf8_stdio()
     args = build_parser().parse_args(argv)
     if args.list_rules:
         print(list_rules())

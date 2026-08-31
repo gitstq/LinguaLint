@@ -72,6 +72,24 @@ class CliTests(unittest.TestCase):
             payload = json.load(f)
         self.assertEqual(payload["summary"]["files"], 2)
 
+    def test_force_utf8_stdio(self):
+        class FakeStream:
+            def __init__(self):
+                self.encoding = None
+            def reconfigure(self, encoding, errors):
+                self.encoding = encoding
+
+        fake = FakeStream()
+        old_out = sys.stdout
+        sys.stdout = fake
+        try:
+            cli._force_utf8_stdio()
+        finally:
+            sys.stdout = old_out
+        self.assertEqual(fake.encoding, "utf-8")
+        # Streams without reconfigure (StringIO) must not raise.
+        cli._force_utf8_stdio()
+
     def test_stdin_mode(self):
         fake = io.StringIO("definately")
         fake.isatty = lambda: False
