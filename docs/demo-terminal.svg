@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" font-family="'JetBrains Mono','Fira Code',Menlo,Consolas,monospace">
+  <rect width="900" height="430" rx="12" fill="#0f1115"/>
+  <rect width="900" height="40" rx="12" fill="#181b22"/>
+  <circle cx="22" cy="20" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="20" r="6" fill="#febc2e"/>
+  <circle cx="62" cy="20" r="6" fill="#28c840"/>
+  <text x="450" y="25" fill="#9aa4b2" font-size="13" text-anchor="middle">lingualint — bash</text>
+  <g font-size="13.5">
+    <text x="20" y="70" fill="#51cf66">$ lingualint examples/sample_en.md</text>
+    <text x="20" y="98" fill="#e6e8ec">📄 examples/sample_en.md  <tspan fill="#9aa4b2">[lang=en, score=81]</tspan></text>
+    <text x="20" y="126" fill="#9aa4b2">  3:27  </text>
+    <text x="86" y="126" fill="#ffb454">WARN </text>
+    <text x="138" y="126" fill="#c792ea">COM004</text>
+    <text x="206" y="126" fill="#e6e8ec">Space before punctuation mark.</text>
+    <text x="86" y="148" fill="#6b7280">→ ','</text>
+    <text x="20" y="176" fill="#9aa4b2">  3:36  </text>
+    <text x="86" y="176" fill="#ff6b6b">ERROR</text>
+    <text x="138" y="176" fill="#c792ea">ENG006</text>
+    <text x="206" y="176" fill="#e6e8ec">“definately” looks misspelled; did you mean “definitely”?</text>
+    <text x="86" y="198" fill="#6b7280">→ 'definitely'</text>
+    <text x="20" y="226" fill="#9aa4b2">  3:62  </text>
+    <text x="86" y="226" fill="#ffb454">WARN </text>
+    <text x="138" y="226" fill="#c792ea">ENG005</text>
+    <text x="206" y="226" fill="#e6e8ec">Possessive “its” followed by a verb; did you mean “it’s”?</text>
+    <text x="86" y="248" fill="#6b7280">→ "It's going"</text>
+    <text x="20" y="276" fill="#9aa4b2">  4:6   </text>
+    <text x="86" y="276" fill="#4fc3f7">HINT </text>
+    <text x="138" y="276" fill="#c792ea">ENG008</text>
+    <text x="206" y="276" fill="#e6e8ec">“very” is a weak intensifier; use a precise word instead.</text>
+    <text x="20" y="312" fill="#9aa4b2">summary: error=1, warning=2, suggestion=1</text>
+    <text x="20" y="344" fill="#e6e8ec">Totals: 1 file(s), 1 error(s), 2 warning(s), 1 suggestion(s), 0 info</text>
+    <text x="20" y="376" fill="#ff6b6b">lingualint: gate FAILED (3 blocking issue(s), worst score 81)</text>
+    <text x="20" y="408" fill="#51cf66">$ <tspan class="caret" fill="#e6e8ec">▍</tspan></text>
+  </g>
+</svg>
