@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LinguaLint"
+version = "1.0.0"
+description = "Offline, zero-dependency bilingual (English/Chinese) writing linter — library + CLI with auto-fix, CI gates and multi-format reports"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "gitstq" }]
+keywords = [
+    "linter",
+    "writing",
+    "grammar-checker",
+    "proofreading",
+    "chinese",
+    "typography",
+    "markdown",
+    "ci",
+    "zero-dependency",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Documentation",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["build>=1.0", "twine>=5.0"]
+
+[project.scripts]
+lingualint = "lingualint.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/gitstq/LinguaLint"
+Repository = "https://github.com/gitstq/LinguaLint"
+Issues = "https://github.com/gitstq/LinguaLint/issues"
+Changelog = "https://github.com/gitstq/LinguaLint/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

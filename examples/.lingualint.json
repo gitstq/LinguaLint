@@ -1,0 +1,15 @@
+{
+  "language": "auto",
+  "zh_latin_spacing": true,
+  "max_line_length": 200,
+  "long_zh_sentence": 60,
+  "rules": {
+    "ENG008": false,
+    "COM008": "suggestion"
+  },
+  "ignore_words": [],
+  "typo_pairs": {
+    "foobar": "foo bar"
+  },
+  "exclude": ["drafts", "*.draft.md"]
+}
